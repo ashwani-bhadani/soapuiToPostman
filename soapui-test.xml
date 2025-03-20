@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="TestProject" xmlns:con="http://eviware.com/soapui/config">
+    <con:testSuite name="TestSuite1">
+        <con:testCase name="TestCase1">
+            <!-- GET Request -->
+            <con:testStep type="restrequest" name="GetUser">
+                <con:config>
+                    <con:method>GET</con:method>
+                    <con:endpoint>https://api.example.com/users/1</con:endpoint>
+                    <con:property name="header_Authorization">Bearer token123</con:property>
+                    <con:property name="header_Content-Type">application/json</con:property>
+                </con:config>
+            </con:testStep>
+            <!-- POST Request -->
+            <con:testStep type="restrequest" name="CreateUser">
+                <con:config>
+                    <con:method>POST</con:method>
+                    <con:endpoint>https://api.example.com/users</con:endpoint>
+                    <con:property name="header_Authorization">Bearer token123</con:property>
+                    <con:property name="header_Content-Type">application/json</con:property>
+                    <con:request>{"name": "John Doe", "age": 30}</con:request>
+                </con:config>
+            </con:testStep>
+            <!-- PUT Request -->
+            <con:testStep type="restrequest" name="UpdateUser">
+                <con:config>
+                    <con:method>PUT</con:method>
+                    <con:endpoint>https://api.example.com/users/1</con:endpoint>
+                    <con:property name="header_Authorization">Bearer token123</con:property>
+                    <con:property name="header_Content-Type">application/json</con:property>
+                    <con:request>{"name": "Jane Doe", "age": 31}</con:request>
+                </con:config>
+            </con:testStep>
+            <!-- DELETE Request -->
+            <con:testStep type="restrequest" name="DeleteUser">
+                <con:config>
+                    <con:method>DELETE</con:method>
+                    <con:endpoint>https://api.example.com/users/1</con:endpoint>
+                    <con:property name="header_Authorization">Bearer token123</con:property>
+                </con:config>
+            </con:testStep>
+        </con:testCase>
+    </con:testSuite>
+</con:soapui-project>

@@ -1,0 +1,36 @@
+Last login: Sun Mar 16 01:48:41 on ttys001
+ash@Ashwanis-MacBook-Air ~ % ls
+Desktop			Downloads		Library			Music			Public
+Documents		IdeaProjects		Movies			Pictures		eclipse-workspace2
+ash@Ashwanis-MacBook-Air ~ % cd eclipse-workspace2
+ash@Ashwanis-MacBook-Air eclipse-workspace2 % git clone https://github.com/ashwani-bhadani/soapuiToPostman.git
+Cloning into 'soapuiToPostman'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 2 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+ash@Ashwanis-MacBook-Air eclipse-workspace2 % ls
+soapuiToPostman	teetarApp
+ash@Ashwanis-MacBook-Air eclipse-workspace2 % cd soapuiToPostman
+ash@Ashwanis-MacBook-Air soapuiToPostman % ls
+HELP.md		README.md	mvnw		mvnw.cmd	pom.xml		src		target
+ash@Ashwanis-MacBook-Air soapuiToPostman % nano soapui-test.xml
+ash@Ashwanis-MacBook-Air soapuiToPostman % echo $HOME
+/Users/ash
+ash@Ashwanis-MacBook-Air soapuiToPostman % echo $HOME
+/Users/ash
+ash@Ashwanis-MacBook-Air soapuiToPostman % echo $HOME                                                   
+/Users/ash
+ash@Ashwanis-MacBook-Air soapuiToPostman % curl -X POST -F "file=Users/ash/eclipse-workspace2/soapuiToPostman/soapui-test.xml" http://localhost:8080/api/convert/soapui-to-postman -o postman-collection.json
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   331    0   120  100   211    933   1641 --:--:-- --:--:-- --:--:--  2585
+ash@Ashwanis-MacBook-Air soapuiToPostman % curl -X POST -F "file=@soapui-test.xml" http://localhost:8080/api/convert/soapui-to-postman -o postman-collection.json
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2677    0   130  100  2547   1984  38883 --:--:-- --:--:-- --:--:-- 41184
+ash@Ashwanis-MacBook-Air soapuiToPostman % curl -X POST -F "file=@soapui-test.xml" http://localhost:8080/api/convert/soapui-to-postman -o postman-collection.json
+curl: (26) Failed to open/read local data from file/application
+ash@Ashwanis-MacBook-Air soapuiToPostman % nano terminal-cmds.txt
+ash@Ashwanis-MacBook-Air soapuiToPostman % 
+
